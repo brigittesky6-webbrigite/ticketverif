@@ -113,16 +113,14 @@ export default function Admin() {
             <div className="admin-ticket-codes">
               {Array.isArray(t.codes)
                 ? t.codes.map((c, i) => <div key={i}><b>Ticket {i + 1}:</b> {c}</div>)
-                : Array.isArray(t.details?.codes)
-                  ? t.details.codes.map((c, i) => <div key={i}><b>Ticket {i + 1}:</b> {c}</div>)
-                  : null
+                : null
               }
             </div>
             {t.email && <div className="admin-ticket-email">Email : {t.email}</div>}
 
             {t.status === 'pending' ? (
               <>
-                <input className="form-input-plain" style={{ marginTop: 12 }} type="text" placeholder="Commentaire admin (optionnel)" value={notes[t.id] || ''} onChange={(e) => setNotes((r) => ({ ...r, [t.id]: e.target.value }))} />
+                <input className="form-input-plain" style={{ marginTop: 12 }} type="text" placeholder="Commentaire admin (optionnel)" value={notes[t.id] || ''} onChange={(e) => setNotes((r) => ({[...]
                 <div className="admin-ticket-actions">
                   <button className="btn-accept" onClick={() => apply(t.id, 'approved')}>✓ Valider</button>
                   <button className="btn-reject" onClick={() => apply(t.id, 'rejected')}>✕ Refuser</button>
