@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 import emailConfig from './email.config.js'
   
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || '9879Ger@@@'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
@@ -107,9 +107,9 @@ app.put('/api/tickets/:id', (req, res) => {
   res.json(tickets[idx])
 })
 
-// Admin login (simple)
+// Admin login
 app.post('/api/admin/login', (req, res) => {
-  if (req.body.password === 'admin123') {
+  if (req.body.password === ADMIN_PASSWORD) {
     res.json({ success: true })
   } else {
     res.status(401).json({ success: false })
@@ -124,5 +124,5 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`\n  ✅  TicketVerif démarré sur http://localhost:${PORT}`)
   console.log(`  📧  Emails vers : ${emailConfig.auth.user}`)
-  console.log(`  🔐  Admin : /admin (mot de passe: admin123)\n`)
+  console.log(`  🔐  Admin : /admin (mot de passe configuré)\n`)
 })
