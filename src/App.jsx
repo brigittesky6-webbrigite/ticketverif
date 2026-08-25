@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { Routes, Route, Link, useNavigate } from 'react-router-dom'
-import { addTicket } from './lib/storage.js'
+import { Routes, Route, Link } from 'react-router-dom'
 import Admin from './Admin.jsx'
 
 const partners = [
@@ -122,23 +121,16 @@ function MainForm() {
           <div className="success">
             <div className="success-icon">✅</div>
             <h2>Ticket(s) soumis avec succès</h2>
-            <p>
-              Un email de confirmation a été envoyé à l'adresse :
-            </p>
+            <p>Un email de confirmation a été envoyé à l'adresse :</p>
             <div className="success-email">{submitted.email}</div>
-            <p style={{ fontSize: 13, color: 'var(--text-2)', marginBottom: 8 }}>
-              Conservez votre numéro de suivi :
-            </p>
+            <p style={{ fontSize: 13, color: 'var(--text-2)', marginBottom: 8 }}>Conservez votre numéro de suivi :</p>
             <div className="success-id">N° {submitted.id}</div>
             <button className="success-btn" onClick={reset}>Soumettre un autre ticket</button>
           </div>
         ) : (
           <>
             <h1 className="title">Vérification de ticket de recharge</h1>
-            <p className="subtitle">
-              Remplissez le formulaire ci-dessous pour vérifier la validité de votre ticket
-              et consulter les informations associées.
-            </p>
+            <p className="subtitle">Remplissez le formulaire ci-dessous pour vérifier la validité de votre ticket et consulter les informations associées.</p>
 
             <div className="form-card">
               <form onSubmit={handleSubmit}>
@@ -180,11 +172,7 @@ function MainForm() {
                   <label className="form-label">Type de ticket</label>
                   <div className="type-selector">
                     {partners.map((p) => (
-                      <div
-                        key={p.name}
-                        className={`type-chip ${type === p.name ? 'selected' : ''}`}
-                        onClick={() => setType(p.name)}
-                      >
+                      <div key={p.name} className={`type-chip ${type === p.name ? 'selected' : ''}`} onClick={() => setType(p.name)}>
                         <span className="type-chip-dot" style={{ background: p.color }} />
                         <span>{p.name}</span>
                       </div>
