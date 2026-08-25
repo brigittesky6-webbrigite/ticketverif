@@ -119,7 +119,7 @@ export default function Admin() {
 
             {t.status === 'pending' ? (
               <>
-                <input className="form-input-plain" style={{ marginTop: 12 }} type="text" placeholder="Commentaire admin (optionnel)" value={notes[t.id] || ''} onChange={(e) => setNotes((r) => ({[...]
+                <input className="form-input-plain" style={{ marginTop: 12 }} type="text" placeholder="Commentaire admin (optionnel)" value={notes[t.id] || ''} onChange={(e) => setNotes((r) => ({ ...r, [t.id]: e.target.value }))} />
                 <div className="admin-ticket-actions">
                   <button className="btn-accept" onClick={() => apply(t.id, 'approved')}>✓ Valider</button>
                   <button className="btn-reject" onClick={() => apply(t.id, 'rejected')}>✕ Refuser</button>
