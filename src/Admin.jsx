@@ -74,7 +74,6 @@ export default function Admin() {
             {pwErr && <div className="form-error">{pwErr}</div>}
             <button type="submit" className="form-submit" style={{ marginTop: 8 }}>Se connecter</button>
           </form>
-          <p className="admin-hint">Mot de passe par défaut : <code>admin123</code></p>
         </div>
       </div>
     )
