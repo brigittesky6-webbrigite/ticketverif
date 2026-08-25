@@ -261,7 +261,6 @@ function MainForm() {
       {/* FOOTER */}
       <footer className="footer">
         <span>© {new Date().getFullYear()} ticketverif. Tous droits réservés.</span>
-        <Link to="/admin" className="footer-admin">Administration</Link>
       </footer>
     </>
   )
