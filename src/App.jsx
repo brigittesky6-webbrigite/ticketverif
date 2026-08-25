@@ -147,7 +147,7 @@ function MainForm() {
                   <label className="form-label">Nom complet</label>
                   <div className="form-input-wrap">
                     <span className="form-input-icon">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 00-4-[...]
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z"/></svg>
                     </span>
                     <input className="form-input" type="text" placeholder="Entrez votre nom complet" value={name} onChange={(e) => setName(e.target.value)} />
                   </div>
@@ -158,7 +158,7 @@ function MainForm() {
                   <label className="form-label">Email</label>
                   <div className="form-input-wrap">
                     <span className="form-input-icon">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" h[...]
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     </span>
                     <input className="form-input" type="email" placeholder="Entrez votre adresse email" value={email} onChange={(e) => setEmail(e.target.value)} />
                   </div>
@@ -169,9 +169,9 @@ function MainForm() {
                   <label className="form-label">Nombre de ticket(s)</label>
                   <div className="form-input-wrap">
                     <span className="form-input-icon">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" he[...]
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
                     </span>
-                    <input className="form-input-number" type="number" min="1" max="10" placeholder="Entrez le nombre de tickets" value={count} onChange={(e) => handleCountChange(e.target.value)}[...]
+                    <input className="form-input-number" type="number" min="1" max="10" placeholder="Entrez le nombre de tickets" value={count} onChange={(e) => handleCountChange(e.target.value)} />
                   </div>
                 </div>
 
@@ -202,9 +202,9 @@ function MainForm() {
                           <div className="code-field-label">Ticket {i}</div>
                           <div className="form-input-wrap">
                             <span className="form-input-icon">
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 9a3 3 0 01[...]
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 9a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9Z"/><circle cx="7.5" cy="13.5" r="1.5" fill="currentColor"/></svg>
                             </span>
-                            <input className="form-input form-input-sm" type={mask ? 'password' : 'text'} placeholder={`Code ticket ${i}`} value={codes[i] || ''} onChange={(e) => handleCodeChange[...]
+                            <input className="form-input form-input-sm" type={mask ? 'password' : 'text'} placeholder={`Code ticket ${i}`} value={codes[i] || ''} onChange={(e) => handleCodeChange(i, e.target.value)} />
                           </div>
                         </div>
                       ))}
@@ -212,9 +212,9 @@ function MainForm() {
                     <div className="codes-toggle">
                       <button type="button" className="mask-toggle" onClick={() => setMask(!mask)}>
                         {mask ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.94 17.94A10.0[...]
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 0 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 0 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
                         ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11[...]
+                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                         )}
                         {mask ? 'Afficher les codes' : 'Masquer les codes'}
                       </button>
@@ -229,7 +229,7 @@ function MainForm() {
                     <>Envoi en cours...</>
                   ) : (
                     <>
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8[...]
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
                       Vérifier le(s) ticket(s)
                     </>
                   )}
@@ -237,7 +237,7 @@ function MainForm() {
               </form>
 
               <div className="form-secure">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height[...]
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 Vos informations sont sécurisées et confidentielles.
               </div>
             </div>
