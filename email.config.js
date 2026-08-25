@@ -1,10 +1,10 @@
 export default {
-  host: 'smtp.gmail.com',
-  port: 587,
+  host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+  port: parseInt(process.env.EMAIL_PORT) || 587,
   secure: false,
   auth: {
-    user: 'TON_EMAIL@gmail.com',
-    pass: 'TON_MOT_DE_PASSE_APP',
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
-  from: '"TicketVerif" <TON_EMAIL@gmail.com>',
+  from: `"TicketVerif" <${process.env.EMAIL_USER}>`,
 }
