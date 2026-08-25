@@ -3,7 +3,8 @@ import nodemailer from 'nodemailer'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 import emailConfig from './email.config.js'
-
+  
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
